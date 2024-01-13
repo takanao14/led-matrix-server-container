@@ -1,4 +1,4 @@
-FROM debian:buster-slim as builder
+FROM debian:bookwarm-slim as builder
 
 RUN apt-get update \
   && apt-get -y install \
@@ -19,7 +19,7 @@ RUN make
 WORKDIR /root/led-matrix-zmq-server
 RUN make
 
-FROM debian:buster-slim
+FROM debian:bookwarm-slim
 
 WORKDIR /root
 
